@@ -1,0 +1,27 @@
+logging: 
+  level: 
+    com.predix.iot: DEBUG
+    
+spring:
+  profiles:
+    active: default
+
+---
+spring:
+  profiles: default
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin 
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 9010
+
+---
+spring:
+  profiles: cloud
